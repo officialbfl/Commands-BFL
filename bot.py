@@ -117,26 +117,7 @@ async def roleinfo(ctx, role: discord.Role):
 
 #______________________CHANNEL-INFO______________________#
 
-@client.command(pass_context=True)
-async def channelinfo(ctx, channel: discord.Channel):
-    embed = discord.Embed(title="", description="", color=0x9B8DC2)
-    embed.add_field(name="ID", value=channel.id)
-    embed.add_field(name="Name", value=channel.name)
-    embed.add_field(name="Private", value=channel.is_private)
-    embed.add_field(name="Position", value=channel.position)
-    embed.add_field(name="Channel Type", value=channel.type)
-    embed.add_field(name="Default", value=channel.is_default)
-    embed.add_field(name="Mention", value=channel.mention)
-    embed.add_field(name="Channel Created", value=channel.created_at.__format__('%d. %B %Y'))
-    embed.set_thumbnail(url= ctx.message.author.avatar_url)
-    embed.set_author(name="Here's what I could find:")
-    utc_dt = datetime.now(timezone.utc)
-    p = utc_dt.strftime('     Time - %H:%M:%S | Date - %d/%m/%Y')
-    utc = str(p)    
-    a=ctx.message.author
-    txt= str(a) + " | " + str(utc)
-    embed.set_footer(text=txt, icon_url=ctx.message.author.avatar_url)
-    await client.say(embed=embed)
+
 
 #______________________SERVER-INFO______________________#
 
